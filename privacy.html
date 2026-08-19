@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Swift VPN Privacy Policy</title>
+    <title>Swift VPN Policy</title>
     <style>
       :root {
         --bg: #0b1526;
@@ -11,13 +11,10 @@
         --text: #eaf1ff;
         --muted: #9db0d1;
         --accent: #4f8cff;
+        --accent-2: #7ea8ff;
         --border: rgba(255, 255, 255, 0.08);
       }
-
-      * {
-        box-sizing: border-box;
-      }
-
+      * { box-sizing: border-box; }
       body {
         margin: 0;
         font-family: Inter, Arial, sans-serif;
@@ -25,13 +22,11 @@
         color: var(--text);
         line-height: 1.65;
       }
-
       .wrap {
-        max-width: 860px;
+        max-width: 920px;
         margin: 0 auto;
         padding: 40px 20px 80px;
       }
-
       .card {
         background: var(--card);
         border: 1px solid var(--border);
@@ -39,30 +34,12 @@
         padding: 28px;
         box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
       }
-
-      h1, h2, h3 {
-        margin-top: 0;
-        color: #fff;
-      }
-
-      h1 {
-        font-size: 34px;
-        margin-bottom: 8px;
-      }
-
-      h2 {
-        margin-top: 32px;
-        font-size: 22px;
-      }
-
-      p, li {
-        color: var(--text);
-      }
-
-      .muted {
-        color: var(--muted);
-      }
-
+      h1, h2, h3, h5 { margin-top: 0; color: #fff; }
+      h1 { font-size: 34px; margin-bottom: 8px; }
+      h2 { margin-top: 36px; font-size: 24px; }
+      h5 { margin: 26px 0 10px; font-size: 16px; color: var(--accent-2); }
+      p, li { color: var(--text); }
+      .muted { color: var(--muted); }
       .tag {
         display: inline-block;
         margin-bottom: 18px;
@@ -72,141 +49,271 @@
         color: #bcd0ff;
         font-size: 13px;
       }
-
-      a {
-        color: #8eb3ff;
+      .lang-switch {
+        display: flex;
+        gap: 10px;
+        margin: 18px 0 24px;
       }
-
-      ul {
-        padding-left: 20px;
+      .lang-switch button {
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(255,255,255,0.04);
+        color: #fff;
+        border-radius: 999px;
+        padding: 10px 14px;
+        cursor: pointer;
+        font-weight: 600;
       }
-
-      .notice {
-        margin-top: 24px;
-        padding: 14px 16px;
-        border-radius: 12px;
-        background: rgba(79, 140, 255, 0.08);
-        border: 1px solid rgba(79, 140, 255, 0.18);
-        color: #d8e5ff;
+      .lang-switch button.active {
+        background: var(--accent);
+        border-color: var(--accent);
       }
+      .lang-section[hidden] { display: none; }
+      a { color: #8eb3ff; }
+      ul { padding-left: 20px; }
     </style>
   </head>
   <body>
     <div class="wrap">
       <div class="card">
         <div class="tag">Swift VPN</div>
-        <h1>Политика конфиденциальности</h1>
-        <p class="muted">Последнее обновление: 19 августа 2026</p>
+        <div class="lang-switch">
+          <button id="btn-ru" class="active" type="button">RU</button>
+          <button id="btn-en" type="button">EN</button>
+        </div>
 
-        <p>
-          Эта Политика конфиденциальности объясняет, как приложение
-          <strong>Swift VPN</strong> обрабатывает информацию при использовании
-          нашего VPN-сервиса. Используя Swift VPN, вы соглашаетесь с условиями
-          этой Политики.
-        </p>
+        <section id="lang-ru" class="lang-section">
+          <h1>Политика конфиденциальности</h1>
+          <p class="muted">Последнее обновление: 19 августа 2026</p>
 
-        <h2>1. Какие данные мы собираем</h2>
-        <p>Мы стремимся собирать как можно меньше данных.</p>
-        <ul>
-          <li>
-            <strong>Технические данные устройства и приложения</strong>:
-            например, версия приложения, версия ОС, информация о сбоях и
-            диагностике, если такие данные передаются платформой или
-            инструментами аналитики.
-          </li>
-          <li>
-            <strong>Данные о соединении</strong>: базовая техническая
-            информация, необходимая для установления и поддержки VPN-соединения,
-            включая выбранный сервер и диагностические данные о подключении.
-          </li>
-          <li>
-            <strong>Данные об использовании</strong>: агрегированные показатели,
-            например успешность подключения, общая производительность сервиса и
-            сведения, помогающие улучшать стабильность работы приложения.
-          </li>
-        </ul>
+          <p>
+            Эта Политика конфиденциальности ("Политика") объясняет, как
+            <strong>Swift VPN</strong> собирает, использует и раскрывает
+            информацию при использовании нашего VPN-сервиса ("Сервис").
+            Используя наш Сервис, вы соглашаетесь на сбор, использование и
+            раскрытие информации, как описано в этой Политике.
+          </p>
 
-        <h2>2. Какие данные мы не собираем</h2>
-        <ul>
-          <li>Мы не продаем ваши персональные данные.</li>
-          <li>
-            Мы не ведем журнал содержимого вашего интернет-трафика, посещенных
-            сайтов, DNS-запросов или сообщений.
-          </li>
-          <li>
-            Мы не используем VPN-сервис для анализа содержимого вашей
-            интернет-активности.
-          </li>
-        </ul>
+          <h5>1. Информация, которую мы собираем</h5>
+          <p>
+            a. Техническая информация: мы можем собирать информацию об
+            устройстве, версии приложения, версии операционной системы,
+            диагностике и сбоях, если такие данные передаются платформой или
+            инфраструктурными инструментами.
+          </p>
+          <p>
+            b. Данные о подключении: мы можем обрабатывать технические данные,
+            необходимые для установления и поддержки VPN-соединения, включая
+            выбранный сервер, факт подключения, ошибки соединения и показатели
+            производительности.
+          </p>
+          <p>
+            c. Данные об использовании: мы можем собирать агрегированные
+            показатели использования Сервиса для статистических и аналитических
+            целей, а также для улучшения стабильности и качества работы.
+          </p>
 
-        <h2>3. Как мы используем информацию</h2>
-        <p>Собранная информация может использоваться для следующих целей:</p>
-        <ul>
-          <li>предоставление и поддержка работы VPN-сервиса;</li>
-          <li>устранение сбоев и технических проблем;</li>
-          <li>улучшение скорости, стабильности и безопасности сервиса;</li>
-          <li>предотвращение злоупотреблений и защита инфраструктуры.</li>
-        </ul>
+          <h5>2. Использование информации</h5>
+          <p>
+            a. Мы используем собранную информацию для предоставления и
+            поддержания Сервиса, обеспечения стабильного подключения,
+            диагностики ошибок и улучшения пользовательского опыта.
+          </p>
+          <p>
+            b. Мы также можем использовать технические и диагностические данные
+            для защиты инфраструктуры, предотвращения злоупотреблений и
+            обеспечения безопасности сервиса.
+          </p>
 
-        <h2>4. Передача данных третьим лицам</h2>
-        <p>
-          Мы можем использовать сторонние сервисы, которые помогают нам
-          обеспечивать работу приложения, например хостинг, мониторинг ошибок,
-          аналитику производительности или инфраструктурных подрядчиков. Такие
-          поставщики получают доступ только к тем данным, которые необходимы для
-          выполнения их функций.
-        </p>
-        <p>
-          Мы также можем раскрыть информацию, если это требуется законом,
-          запросом государственных органов или необходимо для защиты наших прав
-          и безопасности пользователей.
-        </p>
+          <h5>3. Раскрытие информации</h5>
+          <p>
+            a. Мы можем раскрывать информацию сторонним поставщикам услуг,
+            которые помогают нам обеспечивать работу Сервиса, например
+            хостинг-провайдерам, инструментам мониторинга ошибок или
+            аналитическим сервисам. Такие стороны обязаны соблюдать
+            конфиденциальность в разумных пределах.
+          </p>
+          <p>
+            b. Мы также можем раскрывать информацию, если это требуется законом,
+            для защиты наших прав, безопасности пользователей или в ответ на
+            законный запрос государственных органов.
+          </p>
 
-        <h2>5. Хранение данных</h2>
-        <p>
-          Мы храним информацию только в течение срока, необходимого для
-          достижения целей, описанных в этой Политике, если более длительное
-          хранение не требуется законом, безопасностью сервиса или обработкой
-          споров и злоупотреблений.
-        </p>
+          <h5>4. Безопасность данных</h5>
+          <p>
+            a. Мы принимаем разумные технические и организационные меры для
+            защиты информации.
+          </p>
+          <p>
+            b. Однако ни один способ передачи данных через интернет или
+            электронного хранения не может гарантировать абсолютную
+            безопасность.
+          </p>
 
-        <h2>6. Безопасность</h2>
-        <p>
-          Мы применяем разумные технические и организационные меры для защиты
-          данных. Однако ни один способ передачи данных через интернет или
-          электронного хранения не может гарантировать абсолютную безопасность.
-        </p>
+          <h5>5. Хранение данных</h5>
+          <p>
+            a. Мы храним информацию только в течение срока, необходимого для
+            достижения целей, указанных в этой Политике, если более длительный
+            срок хранения не требуется законом.
+          </p>
+          <p>
+            b. Когда информация больше не требуется, она может быть удалена,
+            анонимизирована или агрегирована.
+          </p>
 
-        <h2>7. Дети</h2>
-        <p>
-          Swift VPN не предназначен для детей младше 18 лет. Мы не собираем
-          сознательно персональные данные детей.
-        </p>
+          <h5>6. Конфиденциальность детей</h5>
+          <p>
+            Наш Сервис не предназначен для лиц младше 18 лет. Мы не собираем
+            сознательно персональные данные детей.
+          </p>
 
-        <h2>8. Международная передача данных</h2>
-        <p>
-          Поскольку VPN-инфраструктура может располагаться в разных странах,
-          обработка технических данных может происходить на серверах за
-          пределами вашей страны.
-        </p>
+          <h5>7. Ссылки на сторонние ресурсы</h5>
+          <p>
+            Наш Сервис может содержать ссылки на сторонние сайты или сервисы.
+            Мы не несем ответственности за практики конфиденциальности таких
+            сайтов и рекомендуем ознакомиться с их политиками отдельно.
+          </p>
 
-        <h2>9. Изменения политики</h2>
-        <p>
-          Мы можем обновлять эту Политику конфиденциальности. Актуальная версия
-          всегда публикуется на этой странице. Продолжение использования сервиса
-          после публикации изменений означает согласие с обновленной редакцией.
-        </p>
+          <h5>8. Изменения в Политике конфиденциальности</h5>
+          <p>
+            Мы можем время от времени обновлять эту Политику конфиденциальности.
+            Актуальная версия всегда публикуется на этой странице. Продолжение
+            использования Сервиса после публикации обновленной Политики означает
+            согласие с изменениями.
+          </p>
 
-        <h2>10. Контакты</h2>
-        <p>
-          Если у вас есть вопросы по этой Политике конфиденциальности, вы можете
-          связаться с нами через GitHub-профиль:
-        </p>
-        <p>
-          <strong>Контакт:</strong>
-          <a href="https://github.com/AlexNewR">https://github.com/AlexNewR</a>
-        </p>
+          <h5>9. Свяжитесь с нами</h5>
+          <p>
+            Если у вас есть вопросы по этой Политике конфиденциальности, вы
+            можете связаться с нами через GitHub-профиль:
+            <a href="https://github.com/kotlnewtwork-byte">kotlnewtwork-byte</a>.
+          </p>
+        </section>
+
+        <section id="lang-en" class="lang-section" hidden>
+          <h1>Privacy Policy</h1>
+          <p class="muted">Last updated: August 19, 2026</p>
+
+          <p>
+            This Privacy Policy ("Policy") explains how <strong>Swift VPN</strong>
+            collects, uses, and discloses information when you use our VPN
+            service ("Service"). By using the Service, you agree to the
+            collection, use, and disclosure of information as described in this
+            Policy.
+          </p>
+
+          <h5>1. Information We Collect</h5>
+          <p>
+            a. Technical information: we may collect device information, app
+            version, operating system version, crash reports, and diagnostics
+            when such data is provided by the platform or infrastructure tools.
+          </p>
+          <p>
+            b. Connection data: we may process technical data required to
+            establish and maintain the VPN connection, including selected server,
+            connection events, connection errors, and service performance
+            metrics.
+          </p>
+          <p>
+            c. Usage data: we may collect aggregated usage statistics for
+            analytical purposes and to improve service reliability and quality.
+          </p>
+
+          <h5>2. Use of Information</h5>
+          <p>
+            a. We use collected information to provide and maintain the Service,
+            support stable connections, diagnose issues, and improve user
+            experience.
+          </p>
+          <p>
+            b. We may also use technical and diagnostic data to protect the
+            infrastructure, prevent abuse, and maintain service security.
+          </p>
+
+          <h5>3. Disclosure of Information</h5>
+          <p>
+            a. We may disclose information to third-party service providers that
+            help us operate the Service, such as hosting providers, error
+            monitoring tools, or analytics services. Such parties are expected
+            to handle information confidentially to a reasonable extent.
+          </p>
+          <p>
+            b. We may also disclose information when required by law, to protect
+            our rights, user safety, or in response to a lawful government
+            request.
+          </p>
+
+          <h5>4. Data Security</h5>
+          <p>
+            a. We take reasonable technical and organizational measures to
+            protect information.
+          </p>
+          <p>
+            b. However, no method of transmission over the internet or
+            electronic storage can guarantee absolute security.
+          </p>
+
+          <h5>5. Data Retention</h5>
+          <p>
+            a. We retain information only for as long as necessary to fulfill
+            the purposes described in this Policy, unless a longer retention
+            period is required by law.
+          </p>
+          <p>
+            b. When information is no longer needed, it may be deleted,
+            anonymized, or aggregated.
+          </p>
+
+          <h5>6. Children’s Privacy</h5>
+          <p>
+            Our Service is not intended for individuals under the age of 18. We
+            do not knowingly collect personal data from children.
+          </p>
+
+          <h5>7. Links to Third-Party Resources</h5>
+          <p>
+            Our Service may contain links to third-party websites or services.
+            We are not responsible for the privacy practices of such third
+            parties, and we recommend reviewing their policies separately.
+          </p>
+
+          <h5>8. Changes to This Privacy Policy</h5>
+          <p>
+            We may update this Privacy Policy from time to time. The most
+            current version will always be posted on this page. Your continued
+            use of the Service after updates are published means you accept the
+            revised Policy.
+          </p>
+
+          <h5>9. Contact Us</h5>
+          <p>
+            If you have any questions regarding this Privacy Policy, you may
+            contact us via GitHub:
+            <a href="https://github.com/kotlnewtwork-byte">kotlnewtwork-byte</a>.
+          </p>
+        </section>
       </div>
     </div>
+
+    <script>
+      const ruBtn = document.getElementById('btn-ru');
+      const enBtn = document.getElementById('btn-en');
+      const ru = document.getElementById('lang-ru');
+      const en = document.getElementById('lang-en');
+
+      function setLang(lang) {
+        const isRu = lang !== 'en';
+        ru.hidden = !isRu;
+        en.hidden = isRu;
+        ruBtn.classList.toggle('active', isRu);
+        enBtn.classList.toggle('active', !isRu);
+        document.documentElement.lang = isRu ? 'ru' : 'en';
+        document.title = isRu ? 'Swift VPN Policy' : 'Swift VPN Policy';
+        history.replaceState(null, '', isRu ? '#ru' : '#en');
+      }
+
+      ruBtn.addEventListener('click', () => setLang('ru'));
+      enBtn.addEventListener('click', () => setLang('en'));
+      setLang(location.hash === '#en' ? 'en' : 'ru');
+    </script>
   </body>
 </html>
